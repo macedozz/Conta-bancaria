@@ -41,24 +41,27 @@ public class ContaBancaria {
 
             System.out.println();
 
-            if (opcao == 1) {
-                System.out.println("Seu saldo atual: R$ " + saldo);
-            }else if(opcao == 2){
-                System.out.println("Informe o valor a receber:");
-                double deposito = sc.nextDouble();
-                saldo += deposito;
-                System.out.println("Saldo atualizado: R$ " + saldo);
-            }else if (opcao == 3){
-                System.out.println("informe o valor que você deseja transferir:");
-                double debito = sc.nextDouble();
-
-                if (debito > saldo){
-                    System.out.println("Não há saldo suficiente para fazer essa transferência.");
-                }else{
-                    saldo -= debito;
+            switch (opcao) {
+                case 1:
+                    System.out.println("Seu saldo atual: R$ " + saldo);
+                    break;
+                case 2:
+                    System.out.println("Informe o valor a receber:");
+                    double deposito = sc.nextDouble();
+                    saldo += deposito;
                     System.out.println("Saldo atualizado: R$ " + saldo);
-                }
+                    break;
+                case 3:
+                    System.out.println("informe o valor que você deseja transferir:");
+                    double debito = sc.nextDouble();
+                    if (debito > saldo){
+                        System.out.println("Não há saldo suficiente para fazer essa transferência.");
+                    }else{
+                        saldo -= debito;
+                        System.out.println("Saldo atualizado: R$ " + saldo);
+                    }
+                    break;
             }
-            }
+        }
     }
 }
