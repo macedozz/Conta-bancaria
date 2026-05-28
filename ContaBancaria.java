@@ -25,8 +25,8 @@ public class ContaBancaria {
         System.out.println();
         System.out.println();
 
-        int operacoes = 0;
-        while (operacoes != 4){
+        int opcao = 0;
+        while (opcao != 4){
             System.out.println();
             System.out.println("Operações:");
             System.out.println();
@@ -37,20 +37,18 @@ public class ContaBancaria {
 
             System.out.println();
             System.out.println("Digite a opção desejada:");
-            operacoes = sc.nextInt();
+            opcao = sc.nextInt();
 
             System.out.println();
 
-            if (operacoes == 1){
+            if (opcao == 1) {
                 System.out.println("Seu saldo atual: R$ " + saldo);
-            }
-            if(operacoes == 2){
+            }else if(opcao == 2){
                 System.out.println("Informe o valor a receber:");
                 double deposito = sc.nextDouble();
                 saldo += deposito;
                 System.out.println("Saldo atualizado: R$ " + saldo);
-            }
-            if (operacoes == 3){
+            }else if (opcao == 3){
                 System.out.println("informe o valor que você deseja transferir:");
                 double debito = sc.nextDouble();
 
